@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: df116283ee1eccb4996587c99bedffe2
+=======
+guid: 1fc3203d3151a6f4fa5b110f20a5799e
+>>>>>>> cocoa
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

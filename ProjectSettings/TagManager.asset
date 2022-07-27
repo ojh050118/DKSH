@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
+=======
+  - name: Back Up
+    uniqueID: 1740901853
+    locked: 0
+  - name: Back Down
+    uniqueID: 1107536061
+    locked: 0
+  - name: Block Object
+    uniqueID: 429309781
+    locked: 0
+  - name: NonBLock Object
+    uniqueID: 1599914961
+    locked: 0
+  - name: Player
+    uniqueID: 3304494663
+    locked: 0
+>>>>>>> cocoa

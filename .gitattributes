@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
+<<<<<<< HEAD
 * text=auto
+=======
+* text=auto
+>>>>>>> cocoa

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 53f2ca94ec2549244b685bcecbb1196a
+=======
+guid: e1cc7eb9097638a409c961557f5779b3
+>>>>>>> cocoa
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
