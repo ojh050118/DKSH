@@ -1,13 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 <<<<<<< HEAD
 guid: 1081fc14a4e02e64881ed90160018f4a
 =======
 guid: b3fd771de2703b94180ad5ba17199a4e
 >>>>>>> cocoa
-=======
-guid: b3fd771de2703b94180ad5ba17199a4e
->>>>>>> Stashed changes
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
