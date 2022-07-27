@@ -41,6 +41,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
   - name: Back Up
@@ -59,3 +60,20 @@ TagManager:
     uniqueID: 3304494663
     locked: 0
 >>>>>>> cocoa
+=======
+  - name: Back Up
+    uniqueID: 189391835
+    locked: 0
+  - name: Back Down
+    uniqueID: 2748944171
+    locked: 0
+  - name: Block Object
+    uniqueID: 1636566219
+    locked: 0
+  - name: NonBlock Object
+    uniqueID: 3874266555
+    locked: 0
+  - name: Player
+    uniqueID: 622277463
+    locked: 0
+>>>>>>> Stashed changes

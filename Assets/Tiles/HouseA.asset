@@ -12,13 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: HouseA
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   m_DefaultSprite: {fileID: 7642980859614939925, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
+=======
+  m_DefaultSprite: {fileID: 7642980859614939925, guid: 0b4d2f2e02d00ef4ab35d8eb45520879, type: 3}
+>>>>>>> Stashed changes
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
+<<<<<<< Updated upstream
     - {fileID: 7642980859614939925, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
+=======
+    - {fileID: 7642980859614939925, guid: 0b4d2f2e02d00ef4ab35d8eb45520879, type: 3}
+>>>>>>> Stashed changes
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -35,7 +43,11 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 1
     m_Sprites:
+<<<<<<< Updated upstream
     - {fileID: -174804484191063705, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
+=======
+    - {fileID: -174804484191063705, guid: 0b4d2f2e02d00ef4ab35d8eb45520879, type: 3}
+>>>>>>> Stashed changes
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -52,7 +64,11 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 2
     m_Sprites:
+<<<<<<< Updated upstream
     - {fileID: 2058049638561703503, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
+=======
+    - {fileID: 2058049638561703503, guid: 0b4d2f2e02d00ef4ab35d8eb45520879, type: 3}
+>>>>>>> Stashed changes
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -69,7 +85,11 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 4
     m_Sprites:
+<<<<<<< Updated upstream
     - {fileID: 734368628706365288, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
+=======
+    - {fileID: -2746839580606631015, guid: 0b4d2f2e02d00ef4ab35d8eb45520879, type: 3}
+>>>>>>> Stashed changes
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -86,7 +106,11 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 3
     m_Sprites:
+<<<<<<< Updated upstream
     - {fileID: -2746839580606631015, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
+=======
+    - {fileID: 734368628706365288, guid: 0b4d2f2e02d00ef4ab35d8eb45520879, type: 3}
+>>>>>>> Stashed changes
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -103,7 +127,11 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 5
     m_Sprites:
+<<<<<<< Updated upstream
     - {fileID: 8661651960862297898, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
+=======
+    - {fileID: 8661651960862297898, guid: 0b4d2f2e02d00ef4ab35d8eb45520879, type: 3}
+>>>>>>> Stashed changes
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
