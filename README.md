@@ -26,4 +26,12 @@
  cd DKSH
  ```
  
-소스 코드를 최신 커밋으로 업데이트 하려면 DKSH 
+소스 코드를 최신 커밋으로 업데이트 하려면 `DKSH`폴더에서 다음 명령을 실행하세요:
+
+```shell
+git pull
+```
+
+## 라이선스
+
+*DKSH*의 코드는 [MIT 라이선스](https://opensource.org/licenses/MIT)에 따라 라이선스가 부여됩니다. 자세한 내용은 [라이선스 파일](LICENCE)을 참조하십시오. [tl;dr](https://tldrlegal.com/license/mit-license) 소프트웨어/소스 사본에 원본 저작권 및 라이선스 고지를 포함하는 한 원하는 모든 작업을 수행할 수 있습니다.
