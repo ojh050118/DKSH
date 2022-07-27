@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Back Up
+    uniqueID: 3001567895
+    locked: 0
+  - name: Back Down
+    uniqueID: 770947041
+    locked: 0
+  - name: Block Object
+    uniqueID: 2419399193
+    locked: 0
+  - name: NonClock Object
+    uniqueID: 1703846771
+    locked: 0
+  - name: Player
+    uniqueID: 23270721
+    locked: 0
