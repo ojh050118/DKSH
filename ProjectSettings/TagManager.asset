@@ -41,39 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
   - name: Back Up
-    uniqueID: 1740901853
+    uniqueID: 3001567895
     locked: 0
   - name: Back Down
-    uniqueID: 1107536061
+    uniqueID: 770947041
     locked: 0
   - name: Block Object
-    uniqueID: 429309781
+    uniqueID: 2419399193
     locked: 0
-  - name: NonBLock Object
-    uniqueID: 1599914961
-    locked: 0
-  - name: Player
-    uniqueID: 3304494663
-    locked: 0
->>>>>>> cocoa
-=======
-  - name: Back Up
-    uniqueID: 189391835
-    locked: 0
-  - name: Back Down
-    uniqueID: 2748944171
-    locked: 0
-  - name: Block Object
-    uniqueID: 1636566219
-    locked: 0
-  - name: NonBlock Object
-    uniqueID: 3874266555
+  - name: NonClock Object
+    uniqueID: 1703846771
     locked: 0
   - name: Player
-    uniqueID: 622277463
+    uniqueID: 23270721
     locked: 0
->>>>>>> Stashed changes
