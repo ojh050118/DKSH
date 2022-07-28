@@ -3,11 +3,12 @@ using UnityEngine;
 public class PlayerAction : MonoBehaviour
 {
     public float Speed;
-    Vector2 moveDelta;
+    public InteractionReceptor receptor;
 
     Rigidbody2D rigid;
     Animator anim;
 
+    Vector2 moveDelta;
     Vector3 currentDirection = Vector3.down;
 
     GameObject interactionTarget;
@@ -30,7 +31,7 @@ public class PlayerAction : MonoBehaviour
             currentDirection = moveDelta.y < 0 ? Vector3.down : Vector3.up;
 
         if (Input.GetKeyDown(KeyCode.Space) && interactionTarget != null)
-            Debug.Log($"Current interaction target: {interactionTarget.name}");
+            receptor.Interaction(interactionTarget);
     }
 
     void FixedUpdate()
