@@ -24,8 +24,18 @@ public class PlayerAction : MonoBehaviour
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
 
-        anim.SetInteger("X", (int)x);
-        anim.SetInteger("Y", (int)y);
+        if (anim.GetInteger("X") != x)
+        {
+            anim.SetBool("isChange", true);
+            anim.SetInteger("X", (int)x);
+        } else if (anim.GetInteger("Y") != y)
+        {
+            anim.SetBool("isChange", true);
+            anim.SetInteger("Y", (int)y);
+        } else
+        {
+            anim.SetBool("isChange", false);
+        }
     }
 
     void FixedUpdate()
