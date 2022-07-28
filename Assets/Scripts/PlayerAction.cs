@@ -1,17 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
-
     public float Speed;
-
-    float x;
-    float y;
+    Vector2 moveDelta;
 
     Rigidbody2D rigid;
-    private Animator anim;
+    Animator anim;
 
     void Awake()
     {
@@ -21,15 +16,15 @@ public class PlayerAction : MonoBehaviour
 
     void Update()
     {
-        x = Input.GetAxisRaw("Horizontal");
-        y = Input.GetAxisRaw("Vertical");
-
-        anim.SetInteger("X", (int)x);
-        anim.SetInteger("Y", (int)y);
+        moveDelta.x = Input.GetAxisRaw("Horizontal");
+        moveDelta.y = Input.GetAxisRaw("Vertical");
     }
 
     void FixedUpdate()
     {
-        rigid.velocity = new Vector2(x, y) * Speed;
+        anim.SetInteger("X", (int)moveDelta.x);
+        anim.SetInteger("Y", (int)moveDelta.y);
+
+        rigid.velocity = moveDelta * Speed;
     }
 }
