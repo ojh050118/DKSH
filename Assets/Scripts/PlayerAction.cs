@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
-
     public float Speed;
 
     float x;
@@ -26,15 +23,15 @@ public class PlayerAction : MonoBehaviour
 
         if (anim.GetInteger("X") != x)
         {
-            anim.SetBool("isChange", true);
+            anim.SetBool("IsMoved", true);
             anim.SetInteger("X", (int)x);
         } else if (anim.GetInteger("Y") != y)
         {
-            anim.SetBool("isChange", true);
+            anim.SetBool("IsMoved", true);
             anim.SetInteger("Y", (int)y);
         } else
         {
-            anim.SetBool("isChange", false);
+            anim.SetBool("IsMoved", false);
         }
     }
 
