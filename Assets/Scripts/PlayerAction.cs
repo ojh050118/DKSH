@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
-
     public float Speed;
 
     float x;
@@ -24,8 +21,18 @@ public class PlayerAction : MonoBehaviour
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
 
-        anim.SetInteger("X", (int)x);
-        anim.SetInteger("Y", (int)y);
+        if (anim.GetInteger("X") != x)
+        {
+            anim.SetBool("IsMoved", true);
+            anim.SetInteger("X", (int)x);
+        } else if (anim.GetInteger("Y") != y)
+        {
+            anim.SetBool("IsMoved", true);
+            anim.SetInteger("Y", (int)y);
+        } else
+        {
+            anim.SetBool("IsMoved", false);
+        }
     }
 
     void FixedUpdate()
