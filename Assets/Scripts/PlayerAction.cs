@@ -7,10 +7,10 @@ public class PlayerAction : MonoBehaviour
 
     public float Speed;
 
-    float x;
-    float y;
+    private float x;
+    private float y;
 
-    Rigidbody2D rigid;
+    private Rigidbody2D rigid;
     private Animator anim;
 
     void Awake()
