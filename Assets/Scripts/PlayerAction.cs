@@ -15,6 +15,7 @@ public class PlayerAction : MonoBehaviour
 
     void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
