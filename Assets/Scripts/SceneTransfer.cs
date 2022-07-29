@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TransferMap : MonoBehaviour
+public class SceneTransfer : MonoBehaviour
 {
     /// <summary>
-    /// 이동할 씸
+    /// 이동할 씬.
     /// </summary>
     public string DestinationScene;
 
