@@ -4,7 +4,13 @@ using UnityEngine.UI;
 public class InteractionReceptor : MonoBehaviour
 {
     public GameObject InteractionTarget;
-    public Text Dialog;
+    public GameObject Dialog;
+    public Text Textfield;
+
+    private void Awake()
+    {
+        Dialog?.SetActive(false);
+    }
 
     /// <summary>
     /// 상호작용한 오브젝트와 상호작용을 시작합니다.
@@ -18,12 +24,12 @@ public class InteractionReceptor : MonoBehaviour
         if (InteractionTarget != null)
         {
             InteractionTarget = null;
-            InteractionTarget.SetActive(false);
+            Dialog.SetActive(false);
             return;
         }
 
-        InteractionTarget.SetActive(interactionTarget != null);
+        Dialog.SetActive(interactionTarget != null);
         InteractionTarget ??= interactionTarget;
-        Dialog.text = $"Object name: {interactionTarget.name}";
+        Textfield.text = $"Object name: {interactionTarget.name}";
     }
 }
