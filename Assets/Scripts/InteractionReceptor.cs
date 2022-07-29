@@ -10,6 +10,14 @@ public class InteractionReceptor : MonoBehaviour
 
     public void Interaction(GameObject interactionTarget)
     {
+        if (InteractionTarget != null)
+        {
+            InteractionTarget = null;
+            InteractionTarget.SetActive(false);
+            return;
+        }
+
+        InteractionTarget.SetActive(interactionTarget != null);
         InteractionTarget ??= interactionTarget;
         Dialog.text = $"Object name: {interactionTarget.name}";
     }

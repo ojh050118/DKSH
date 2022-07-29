@@ -21,6 +21,12 @@ public class PlayerAction : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space) && interactionTarget != null)
+            receptor.Interaction(interactionTarget);
+
+        if (receptor.InteractionTarget != null)
+            return;
+
         moveDelta.x = Input.GetAxisRaw("Horizontal");
         moveDelta.y = Input.GetAxisRaw("Vertical");
 
@@ -29,9 +35,6 @@ public class PlayerAction : MonoBehaviour
 
         if (moveDelta.y != 0)
             currentDirection = moveDelta.y < 0 ? Vector3.down : Vector3.up;
-
-        if (Input.GetKeyDown(KeyCode.Space) && interactionTarget != null)
-            receptor.Interaction(interactionTarget);
     }
 
     void FixedUpdate()
