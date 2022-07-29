@@ -1,22 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Transfermap : MonoBehaviour
-{
-    public string transferMapName;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+public class TransferMap : MonoBehaviour
+{
+    /// <summary>
+    /// 이동할 씸
+    /// </summary>
+    public string DestinationScene;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if(collision.gameObject.name == "Player")
         {
-            SceneManager.LoadScene(transferMapName);
+            SceneManager.LoadScene(DestinationScene);
         }
     }
 }
