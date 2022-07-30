@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
-    static public PlayerAction instance;
+    public static PlayerAction instance;
 
     public string currentMapName;
 
@@ -21,15 +21,17 @@ public class PlayerAction : MonoBehaviour
     {
         if(instance == null)
         {
-            DontDestroyOnLoad(gameObject);
-            rigid = GetComponent<Rigidbody2D>();
-            anim = GetComponent<Animator>();
             instance = this;
         }
         else
         {
             Destroy(gameObject);
+            return;
         }
+
+        DontDestroyOnLoad(gameObject);
+        rigid = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
