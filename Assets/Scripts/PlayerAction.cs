@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
+    static public PlayerAction instance;
+
+    public string currentMapName;
+
     public float Speed;
     public InteractionReceptor receptor;
 
@@ -15,9 +19,24 @@ public class PlayerAction : MonoBehaviour
 
     void Awake()
     {
+<<<<<<< HEAD
         DontDestroyOnLoad(gameObject);
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+=======
+        if(instance == null)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            rigid = GetComponent<Rigidbody2D>();
+            anim = GetComponent<Animator>();
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+     
+>>>>>>> c0d7e005db17094ff67d021810e687e439b442e5
     }
 
     void Update()
