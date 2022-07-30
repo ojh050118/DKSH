@@ -19,24 +19,17 @@ public class PlayerAction : MonoBehaviour
 
     void Awake()
     {
-<<<<<<< HEAD
-        DontDestroyOnLoad(gameObject);
-        rigid = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-=======
         if(instance == null)
         {
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
             rigid = GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
             instance = this;
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
-     
->>>>>>> c0d7e005db17094ff67d021810e687e439b442e5
     }
 
     void Update()
