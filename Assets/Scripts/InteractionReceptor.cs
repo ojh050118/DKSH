@@ -25,7 +25,6 @@ public class InteractionReceptor : MonoBehaviour
 
         Dialog.SetActive(interactionTarget != null);
         InteractionTarget = interactionTarget;
-        Debug.Log(InteractionTarget);
         Textfield.text = $"Object name: {interactionTarget.name}";
     }
 }
