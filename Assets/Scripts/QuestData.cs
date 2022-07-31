@@ -1,15 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-
-public class QuestList : MonoBehaviour
+public class QuestList
 {
-    public int Id;
-    public QuestData quest;
+    public int ID;
+    public QuestData Data;
 }
-public class QuestData : MonoBehaviour
+public class QuestData
 {
-    public string questName;
-    public int[] npcId;
+    public string QuestMessage;
+    public int[] NpcID;
+    public TalkManager.TalkData[] TalkData;
 }

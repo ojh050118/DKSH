@@ -1,23 +1,49 @@
 using Newtonsoft.Json;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-    public int questId;
     public TextAsset QuestDataJson;
 
-    Dictionary<int, QuestData> questList;
+    Dictionary<int, QuestData> questData;
+
+    public int Current = 0;
+    public int CurrentNpcIDIndex;
+    public QuestData CurrentQuestData => GetQuestData(Current);
 
     void Awake()
     {
-        questList = parseQuestData(QuestDataJson.text);
+        questData = parseQuestData(QuestDataJson.text);
     }
 
-    public int GetQuestTalkIndex(int id)
+    public string GetQuestTalk(int npcID, int index)
     {
-        return questId;
+        if (questData[Current].TalkData.FirstOrDefault(t => t.ID == npcID) == null)
+            return null;
+
+        var talkData = questData[Current].TalkData.FirstOrDefault(t => t.ID == npcID);
+
+        if (index >= talkData.Data.Length || index < 0)
+            return null;
+        else
+            return talkData.Data[index];
+    }
+
+    public string GetQuestMessage() => questData[Current].QuestMessage;
+
+    public QuestData GetQuestData(int id)
+    {
+        if (!questData.ContainsKey(id))
+            return null;
+        else
+            return questData[id];
+    }
+
+    public void ProcessQuest()
+    {
+        CurrentNpcIDIndex++;
     }
 
     Dictionary<int, QuestData> parseQuestData(string json)
@@ -30,7 +56,7 @@ public class QuestManager : MonoBehaviour
         Dictionary<int, QuestData> result = new Dictionary<int, QuestData>();
 
         foreach (var data in questData)
-            result.Add(data.Id, data.quest);
+            result.Add(data.ID, data.Data);
 
         return result;
     }

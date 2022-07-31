@@ -16,13 +16,24 @@ public class TalkManager : MonoBehaviour
         talkData = parseTalkData(TalkDataJson.text);
     }
 
-    public string GetTalk(int id, int index)
+    public string GetTalk(int? id, int index)
     {
+        if (!id.HasValue)
+            return null;
+
         //ID가 NPCTalkData에 존재하지 않거나 대화 인덱스가 범위를 초과하면 null을 반환합니다.
-        if (!talkData.ContainsKey(id) || index >= talkData[id].Length)
+        if (!talkData.ContainsKey(id.Value) || index >= talkData[id.Value].Length)
             return null;
         else
-            return talkData[id][index];
+            return talkData[id.Value][index];
+    }
+
+    public string[] GetData(int id)
+    {
+        if (!talkData.ContainsKey(id))
+            return new string[0];
+        else
+            return talkData[id];
     }
 
     /// <summary>

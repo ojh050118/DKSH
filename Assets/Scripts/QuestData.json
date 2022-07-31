@@ -1,9 +1,20 @@
 [
   {
-    "Id": 10,
-    "quest": {
-      "questName": "NPC와 대화하기",
-      "npcId": [1, 2]
-    }
+      "ID": 0,
+      "Data": {
+          "QuestMessage": "NPC와 대화하기",
+          "NpcID": [
+              1,
+              2
+          ],
+          "TalkData": [
+            {
+                "ID": 0,
+                "Data": [
+                    "NPC A와 하는 퀘스트"
+                ]
+            }
+          ]
+      }
   }
 ]

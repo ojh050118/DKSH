@@ -2943,8 +2943,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617521c8df5624545824e6b1115ba66e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questId: 10
   QuestDataJson: {fileID: 4900000, guid: 6366241b02298b44db30fe56fa289265, type: 3}
+  Current: 0
+  CurrentNpcIDIndex: 0
 --- !u!4 &287126530
 Transform:
   m_ObjectHideFlags: 0
@@ -3166,7 +3167,7 @@ MonoBehaviour:
   Dialog: {fileID: 346417834}
   Textfield: {fileID: 366843088}
   TalkManager: {fileID: 2145149732}
-  questManager: {fileID: 287126529}
+  QuestManager: {fileID: 287126529}
 --- !u!1 &510983857
 GameObject:
   m_ObjectHideFlags: 0
@@ -3215,7 +3216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 1
-  isNPC: 1
+  IsNpc: 1
 --- !u!95 &510983860
 Animator:
   serializedVersion: 4
@@ -4639,7 +4640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  isNPC: 1
+  IsNpc: 1
 --- !u!1 &1471979980
 GameObject:
   m_ObjectHideFlags: 0
@@ -4687,7 +4688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 2
-  isNPC: 0
+  IsNpc: 0
 --- !u!212 &1471979983
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5068,7 +5069,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -2969016694365801900, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 1955328530927145255, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.4814143
+      m_AnimationSpeed: 2.6920342
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 6, y: 2, z: 0}
@@ -5076,7 +5077,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -2969016694365801900, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 1955328530927145255, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 2.9120526
+      m_AnimationSpeed: 2.1647289
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 7, y: 2, z: 0}
@@ -5084,7 +5085,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -2969016694365801900, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 1955328530927145255, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 2.0998971
+      m_AnimationSpeed: 2.484252
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 4, y: 4, z: 0}
@@ -5092,7 +5093,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -3803466081661082397, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.0304871
+      m_AnimationSpeed: 2.1910908
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 5, y: 4, z: 0}
@@ -5100,7 +5101,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -3803466081661082397, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.4098372
+      m_AnimationSpeed: 1.9312632
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 6, y: 4, z: 0}
@@ -5108,7 +5109,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -3803466081661082397, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.7648823
+      m_AnimationSpeed: 2.1372416
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -5228,7 +5229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 3
-  isNPC: 0
+  IsNpc: 0
 --- !u!212 &1802497081
 SpriteRenderer:
   m_ObjectHideFlags: 0
