@@ -2944,6 +2944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questId: 10
+  questActionIndex: 0
   QuestDataJson: {fileID: 4900000, guid: 6366241b02298b44db30fe56fa289265, type: 3}
 --- !u!4 &287126530
 Transform:
@@ -3127,7 +3128,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 402340327}
-  - component: {fileID: 402340328}
   m_Layer: 0
   m_Name: Interaction Receptor
   m_TagString: Untagged
@@ -3150,23 +3150,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &402340328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 402340326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d66cf818d9ba34797417c954c928cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractionTarget: {fileID: 0}
-  Dialog: {fileID: 346417834}
-  Textfield: {fileID: 366843088}
-  TalkManager: {fileID: 2145149732}
-  questManager: {fileID: 287126529}
 --- !u!1 &510983857
 GameObject:
   m_ObjectHideFlags: 0
@@ -3214,7 +3197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6657a5e052d5841a8a488561e56f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 1
+  ID: 2000
   isNPC: 1
 --- !u!95 &510983860
 Animator:
@@ -3948,6 +3931,57 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &770303511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770303513}
+  - component: {fileID: 770303512}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &770303512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770303511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da11088ce7a82648afb9dd800fd83b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talkManager: {fileID: 2145149732}
+  questManager: {fileID: 287126529}
+  talkPanel: {fileID: 346417834}
+  talkText: {fileID: 366843088}
+  scanObject: {fileID: 0}
+  isAction: 0
+  talkIndex: 0
+--- !u!4 &770303513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770303511}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.72991455, y: 1.0586251, z: -0.029257448}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &882518516
 GameObject:
   m_ObjectHideFlags: 0
@@ -4075,7 +4109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 4
-  receptor: {fileID: 402340328}
+  manager: {fileID: 770303512}
 --- !u!61 &882518522
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4638,7 +4672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6657a5e052d5841a8a488561e56f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 1000
   isNPC: 1
 --- !u!1 &1471979980
 GameObject:
@@ -4686,7 +4720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6657a5e052d5841a8a488561e56f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 2
+  ID: 100
   isNPC: 0
 --- !u!212 &1471979983
 SpriteRenderer:
@@ -5068,7 +5102,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -2969016694365801900, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 1955328530927145255, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.4814143
+      m_AnimationSpeed: 2.395424
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 6, y: 2, z: 0}
@@ -5076,7 +5110,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -2969016694365801900, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 1955328530927145255, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 2.9120526
+      m_AnimationSpeed: 1.7454417
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 7, y: 2, z: 0}
@@ -5084,7 +5118,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -2969016694365801900, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 1955328530927145255, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 2.0998971
+      m_AnimationSpeed: 2.9341848
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 4, y: 4, z: 0}
@@ -5092,7 +5126,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -3803466081661082397, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.0304871
+      m_AnimationSpeed: 1.6258377
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 5, y: 4, z: 0}
@@ -5100,7 +5134,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -3803466081661082397, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.4098372
+      m_AnimationSpeed: 1.6968353
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 6, y: 4, z: 0}
@@ -5108,7 +5142,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -3803466081661082397, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.7648823
+      m_AnimationSpeed: 1.9875348
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -5227,7 +5261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6657a5e052d5841a8a488561e56f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 3
+  ID: 200
   isNPC: 0
 --- !u!212 &1802497081
 SpriteRenderer:
@@ -6318,7 +6352,7 @@ GameObject:
   - component: {fileID: 2145149733}
   - component: {fileID: 2145149732}
   m_Layer: 0
-  m_Name: Talk Manager
+  m_Name: TalkManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

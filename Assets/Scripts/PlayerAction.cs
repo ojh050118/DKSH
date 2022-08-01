@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerAction : MonoBehaviour
 {
     public float Speed;
-    public InteractionReceptor receptor;
+    public GameManager manager;
 
     Rigidbody2D rigid;
     Animator anim;
@@ -24,14 +24,14 @@ public class PlayerAction : MonoBehaviour
     {
         // 스페이스 키를 눌렀을 때 상호작용 할 대상이 있다면 그 오브젝트와 상호작용을 시작합니다.
         if (Input.GetKeyDown(KeyCode.Space) && interactionTarget != null)
-            receptor.Interaction(interactionTarget);
+            manager.Action(interactionTarget);
 
         // 상호작용 중일 때 이동 입력은 무시합니다.
-        if (receptor.InteractionTarget != null)
-            return;
+        //if (mananger.scanObject != null)
+        //    return;
 
-        moveDelta.x = Input.GetAxisRaw("Horizontal");
-        moveDelta.y = Input.GetAxisRaw("Vertical");
+        moveDelta.x = manager.isAction ? 0 : Input.GetAxisRaw("Horizontal");
+        moveDelta.y = manager.isAction ? 0 : Input.GetAxisRaw("Vertical");
 
         // 현재 입력 값으로 플레이어의 방향을 결정합니다.
         // Todo: 대각선 방향으로 이동하는 것을 허용하지 않아야합니다.

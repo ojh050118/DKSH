@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 
-public class QuestList : MonoBehaviour
+public class QuestList
 {
     public int Id;
     public QuestData quest;
 }
-public class QuestData : MonoBehaviour
+public class QuestData
 {
     public string questName;
     public int[] npcId;
