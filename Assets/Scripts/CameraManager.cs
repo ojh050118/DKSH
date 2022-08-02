@@ -5,19 +5,19 @@ public class CameraManager : MonoBehaviour
     public static CameraManager instance;
     public GameObject target;
     public float moveSpeed;
-
     public BoxCollider2D bound;
-    private Vector3 targetPosition;
 
-    private Vector3 minBound;
-    private Vector3 maxBound;
+    Vector3 targetPosition;
 
-    private float halfWidth;
-    private float halfHeight;
+    Vector3 minBound;
+    Vector3 maxBound;
 
-    private Camera theCamera;
+    float halfWidth;
+    float halfHeight;
 
-    private void Awake()
+    Camera theCamera;
+
+    void Awake()
     {
         if (instance != null)
         {
@@ -29,6 +29,7 @@ public class CameraManager : MonoBehaviour
             instance = this;
         }
     }
+
     void Start()
     {
         theCamera = GetComponent<Camera>();
@@ -44,11 +45,11 @@ public class CameraManager : MonoBehaviour
         {
             targetPosition.Set(target.transform.position.x, target.transform.position.y, transform.position.z);
 
-            this.transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-            float clampedX = Mathf.Clamp(this.transform.position.x, minBound.x + halfWidth, maxBound.x - halfWidth);
-            float clampedY = Mathf.Clamp(this.transform.position.y, minBound.y + halfHeight, maxBound.y - halfHeight);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            float clampedX = Mathf.Clamp(transform.position.x, minBound.x + halfWidth, maxBound.x - halfWidth);
+            float clampedY = Mathf.Clamp(transform.position.y, minBound.y + halfHeight, maxBound.y - halfHeight);
 
-            this.transform.position = new Vector3(clampedX, clampedY, this.transform.position.z);
+            transform.position = new Vector3(clampedX, clampedY, transform.position.z);
         }
     }
 
