@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 7092ef055e0cc7b419f3e3ada85eb7c4
+guid: 79dd0e4ae9fc6c94fb26a256b1c5295d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - TalkDataJson: {fileID: 4900000, guid: fdcf4bdf7f7e4e448bfcc2d55ca0641a, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
