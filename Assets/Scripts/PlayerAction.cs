@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
+    public static PlayerAction instance;
+
+    public string currentMapName;
+
     public float Speed;
     public GameManager manager;
 
@@ -15,6 +19,16 @@ public class PlayerAction : MonoBehaviour
 
     void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         DontDestroyOnLoad(gameObject);
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
