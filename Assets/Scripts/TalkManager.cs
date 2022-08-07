@@ -18,8 +18,20 @@ public class TalkManager : MonoBehaviour
 
     public string GetTalk(int id, int index)
     {
+        if (!talkData.ContainsKey(id))
+        {
+            if (!talkData.ContainsKey(id - id % 10))
+            {
+                return GetTalk(id - id % 100, index);
+            }
+            else
+            {
+                return GetTalk(id - id % 10, index);
+            }
+        }
+
         //ID가 NPCTalkData에 존재하지 않거나 대화 인덱스가 범위를 초과하면 null을 반환합니다.
-        if (!talkData.ContainsKey(id) || index >= talkData[id].Length)
+        if (index == talkData[id].Length)
             return null;
         else
             return talkData[id][index];
