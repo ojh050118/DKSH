@@ -74,3 +74,6 @@ crashlytics-build.properties
 # Added
 .DS_Store
 .idea/
+
+# Unity projet version file
+/ProjectSettings/ProjectVersion.txt
