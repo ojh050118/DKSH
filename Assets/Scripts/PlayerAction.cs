@@ -15,6 +15,8 @@ public class PlayerAction : MonoBehaviour
     Vector2 moveDelta;
     Vector3 currentDirection = Vector3.down;
 
+    bool isHorizontal;
+
     GameObject interactionTarget;
 
     void Awake()
@@ -41,11 +43,18 @@ public class PlayerAction : MonoBehaviour
             manager.Action(interactionTarget);
 
         // 상호작용 중일 때 이동 입력은 무시합니다.
-        //if (mananger.scanObject != null)
-        //    return;
-
         moveDelta.x = manager.isAction ? 0 : Input.GetAxisRaw("Horizontal");
         moveDelta.y = manager.isAction ? 0 : Input.GetAxisRaw("Vertical");
+
+        var hDown = Input.GetButtonDown("Horizontal");
+        var vDown = Input.GetButtonDown("Vertical");
+        var hUp = Input.GetButtonUp("Horizontal");
+        var vUp = Input.GetButtonUp("Vertical");
+
+        if (hDown || vUp)
+            isHorizontal = true;
+        else if (vDown || hUp)
+            isHorizontal = false;
 
         // 현재 입력 값으로 플레이어의 방향을 결정합니다.
         // Todo: 대각선 방향으로 이동하는 것을 허용하지 않아야합니다.
@@ -63,7 +72,7 @@ public class PlayerAction : MonoBehaviour
         // 일정하게 애니메이션을 실행해야 하기때문에 FixedUpdate() 함수에서 실행해야합니다.
         processAnimation();
 
-        rigid.velocity = moveDelta * Speed;
+        rigid.velocity = (isHorizontal ? new Vector2(moveDelta.x, 0) : new Vector2(0, moveDelta.y)) * Speed;
 
         // 플레이어 전방에 오브젝트가 있는지 확인하기 위해 플레이어의 위치에서 하나의 선을 만듭니다.
         // 오브젝트는 Interactonable레이어에 있는 오브젝트로 한정됩니다.
