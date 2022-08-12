@@ -51,9 +51,16 @@ public class PlayerAction : MonoBehaviour
         var hUp = Input.GetButtonUp("Horizontal");
         var vUp = Input.GetButtonUp("Vertical");
 
-        if (hDown || vUp)
+        var left = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
+        var right = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
+        var up = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
+        var down = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
+
+        Debug.Log($"left: {left} | right: {right} | up: {up} | down: {down}");
+
+        if (left || right)
             isHorizontal = true;
-        else if (vDown || hUp)
+        else
             isHorizontal = false;
 
         // 현재 입력 값으로 플레이어의 방향을 결정합니다.
