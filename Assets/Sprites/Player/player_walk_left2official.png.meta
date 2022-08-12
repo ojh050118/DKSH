@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ff65f54cf0391f04d84a12521928d413
+guid: 48c2ef1129840534b817358c6a5ea73a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -100,137 +100,89 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_walk_rightofficial_0
+      name: player_walk_left2official_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 0
-        width: 20
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a66f227d62bb2445a91fe8bf4944b10
-      internalID: 1154501462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_walk_rightofficial_1
-      rect:
-        serializedVersion: 2
-        x: 27
+        x: 3
         y: 0
         width: 22
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d5f3e4405b3d5a41bf44e37bb284b1d
-      internalID: 691650698
+      spriteID: b14f5d866bd9e7f4c850974d46cb80de
+      internalID: -1957123743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_walk_rightofficial_2
+      name: player_walk_left2official_1
       rect:
         serializedVersion: 2
-        x: 55
-        y: 0
-        width: 19
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 628b24f7f8a39ea44bb5731f50898ee4
-      internalID: -426718848
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_walk_rightofficial_3
-      rect:
-        serializedVersion: 2
-        x: 77
+        x: 25
         y: 0
         width: 22
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb1c8a3da01ec604f981af1ab92914cf
-      internalID: -739384023
+      spriteID: adce40dc64afaf0458e0366e961bc0aa
+      internalID: -1795947996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_left2official_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 22
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0cc871cca805e74d8e8031d32589db7
+      internalID: 1571029375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_walk_left2official_3
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 0
+        width: 22
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fe27adaee9f6c54fa0b70ac3b37590f
+      internalID: 918018298
       vertices: []
       indices: 
       edges: []
@@ -246,10 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      player_walk_rightofficial_1: 691650698
-      player_walk_rightofficial_0: 1154501462
-      player_walk_rightofficial_2: -426718848
-      player_walk_rightofficial_3: -739384023
+      player_walk_left2official_1: -1795947996
+      player_walk_left2official_3: 918018298
+      player_walk_left2official_0: -1957123743
+      player_walk_left2official_2: 1571029375
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
