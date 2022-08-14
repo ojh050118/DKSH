@@ -56,15 +56,12 @@ public class PlayerAction : MonoBehaviour
         var up = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
         var down = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
 
-        Debug.Log($"left: {left} | right: {right} | up: {up} | down: {down}");
-
         if (left || right)
             isHorizontal = true;
         else
             isHorizontal = false;
 
         // 현재 입력 값으로 플레이어의 방향을 결정합니다.
-        // Todo: 대각선 방향으로 이동하는 것을 허용하지 않아야합니다.
         if (moveDelta.x != 0)
             currentDirection = moveDelta.x < 0 ? Vector3.left : Vector3.right;
 
