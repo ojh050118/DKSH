@@ -51,6 +51,11 @@ public class PlayerAction : MonoBehaviour
         var hUp = Input.GetButtonUp("Horizontal");
         var vUp = Input.GetButtonUp("Vertical");
 
+        if (moveDelta.x != 0)
+        {
+            moveDelta.y = 0;
+        }
+
         var left = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
         var right = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
         var up = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
