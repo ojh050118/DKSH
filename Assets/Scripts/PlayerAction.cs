@@ -21,6 +21,8 @@ public class PlayerAction : MonoBehaviour
 
     void Awake()
     {
+        // 객체가 최초로 생성되면 정적 변수에 저장해 기억합니다.
+        // 다시 같은 객체가 만들어 진다면 그 객체는 폐기됩니다.
         if(instance == null)
         {
             instance = this;
@@ -46,20 +48,11 @@ public class PlayerAction : MonoBehaviour
         moveDelta.x = manager.isAction ? 0 : Input.GetAxisRaw("Horizontal");
         moveDelta.y = manager.isAction ? 0 : Input.GetAxisRaw("Vertical");
 
-        var hDown = Input.GetButtonDown("Horizontal");
-        var vDown = Input.GetButtonDown("Vertical");
-        var hUp = Input.GetButtonUp("Horizontal");
-        var vUp = Input.GetButtonUp("Vertical");
-
         if (moveDelta.x != 0)
-        {
             moveDelta.y = 0;
-        }
 
         var left = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
         var right = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
-        var up = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
-        var down = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
 
         if (left || right)
             isHorizontal = true;
