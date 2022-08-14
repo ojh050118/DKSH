@@ -15,10 +15,14 @@ public class PlayerAction : MonoBehaviour
     Vector2 moveDelta;
     Vector3 currentDirection = Vector3.down;
 
+    bool isHorizontal;
+
     GameObject interactionTarget;
 
     void Awake()
     {
+        // ê°ì²´ê°€ ìµœì´ˆë¡œ ìƒì„±ë˜ë©´ ì •ì  ë³€ìˆ˜ì— ì €ì¥í•´ ê¸°ì–µí•©ë‹ˆë‹¤.
+        // ë‹¤ì‹œ ê°™ì€ ê°ì²´ê°€ ë§Œë“¤ì–´ ì§„ë‹¤ë©´ ê·¸ ê°ì²´ëŠ” íê¸°ë©ë‹ˆë‹¤.
         if(instance == null)
         {
             instance = this;
@@ -36,19 +40,26 @@ public class PlayerAction : MonoBehaviour
 
     void Update()
     {
-        // ½ºÆäÀÌ½º Å°¸¦ ´­·¶À» ¶§ »óÈ£ÀÛ¿ë ÇÒ ´ë»óÀÌ ÀÖ´Ù¸é ±× ¿ÀºêÁ§Æ®¿Í »óÈ£ÀÛ¿ëÀ» ½ÃÀÛÇÕ´Ï´Ù.
+        // ìŠ¤í˜ì´ìŠ¤ í‚¤ë¥¼ ëˆŒë €ì„ ë•Œ ìƒí˜¸ì‘ìš© í•  ëŒ€ìƒì´ ìˆë‹¤ë©´ ê·¸ ì˜¤ë¸Œì íŠ¸ì™€ ìƒí˜¸ì‘ìš©ì„ ì‹œì‘í•©ë‹ˆë‹¤.
         if (Input.GetKeyDown(KeyCode.Space) && interactionTarget != null)
             manager.Action(interactionTarget);
 
-        // »óÈ£ÀÛ¿ë ÁßÀÏ ¶§ ÀÌµ¿ ÀÔ·ÂÀº ¹«½ÃÇÕ´Ï´Ù.
-        //if (mananger.scanObject != null)
-        //    return;
-
+        // ìƒí˜¸ì‘ìš© ì¤‘ì¼ ë•Œ ì´ë™ ì…ë ¥ì€ ë¬´ì‹œí•©ë‹ˆë‹¤.
         moveDelta.x = manager.isAction ? 0 : Input.GetAxisRaw("Horizontal");
         moveDelta.y = manager.isAction ? 0 : Input.GetAxisRaw("Vertical");
 
-        // ÇöÀç ÀÔ·Â °ªÀ¸·Î ÇÃ·¹ÀÌ¾îÀÇ ¹æÇâÀ» °áÁ¤ÇÕ´Ï´Ù.
-        // Todo: ´ë°¢¼± ¹æÇâÀ¸·Î ÀÌµ¿ÇÏ´Â °ÍÀ» Çã¿ëÇÏÁö ¾Ê¾Æ¾ßÇÕ´Ï´Ù.
+        if (moveDelta.x != 0)
+            moveDelta.y = 0;
+
+        var left = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
+        var right = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
+
+        if (left || right)
+            isHorizontal = true;
+        else
+            isHorizontal = false;
+
+        // í˜„ì¬ ì…ë ¥ ê°’ìœ¼ë¡œ í”Œë ˆì´ì–´ì˜ ë°©í–¥ì„ ê²°ì •í•©ë‹ˆë‹¤.
         if (moveDelta.x != 0)
             currentDirection = moveDelta.x < 0 ? Vector3.left : Vector3.right;
 
@@ -58,18 +69,18 @@ public class PlayerAction : MonoBehaviour
 
     void FixedUpdate()
     {
-        // ¾Ö´Ï¸ŞÀÌ¼Ç ¸Å´ÏÀúÀÇ ¸Å°³º¯¼ö¿¡ °ªÀ» ¼³Á¤ÇÕ´Ï´Ù.
-        // ¾Ö´Ï¸ŞÀÌ¼Ç ¸Å´ÏÀú´Â ¸Å°³º¯¼ö °ªÀÌ º¯ÇÏ´Â Áï½Ã ¾Ö´Ï¸ŞÀÌ¼ÇÀ» ½ÇÇàÇÕ´Ï´Ù.
-        // ÀÏÁ¤ÇÏ°Ô ¾Ö´Ï¸ŞÀÌ¼ÇÀ» ½ÇÇàÇØ¾ß ÇÏ±â¶§¹®¿¡ FixedUpdate() ÇÔ¼ö¿¡¼­ ½ÇÇàÇØ¾ßÇÕ´Ï´Ù.
+        // ì• ë‹ˆë©”ì´ì…˜ ë§¤ë‹ˆì €ì˜ ë§¤ê°œë³€ìˆ˜ì— ê°’ì„ ì„¤ì •í•©ë‹ˆë‹¤.
+        // ì• ë‹ˆë©”ì´ì…˜ ë§¤ë‹ˆì €ëŠ” ë§¤ê°œë³€ìˆ˜ ê°’ì´ ë³€í•˜ëŠ” ì¦‰ì‹œ ì• ë‹ˆë©”ì´ì…˜ì„ ì‹¤í–‰í•©ë‹ˆë‹¤.
+        // ì¼ì •í•˜ê²Œ ì• ë‹ˆë©”ì´ì…˜ì„ ì‹¤í–‰í•´ì•¼ í•˜ê¸°ë•Œë¬¸ì— FixedUpdate() í•¨ìˆ˜ì—ì„œ ì‹¤í–‰í•´ì•¼í•©ë‹ˆë‹¤.
         processAnimation();
 
-        rigid.velocity = moveDelta * Speed;
+        rigid.velocity = (isHorizontal ? new Vector2(moveDelta.x, 0) : new Vector2(0, moveDelta.y)) * Speed;
 
-        // ÇÃ·¹ÀÌ¾î Àü¹æ¿¡ ¿ÀºêÁ§Æ®°¡ ÀÖ´ÂÁö È®ÀÎÇÏ±â À§ÇØ ÇÃ·¹ÀÌ¾îÀÇ À§Ä¡¿¡¼­ ÇÏ³ªÀÇ ¼±À» ¸¸µì´Ï´Ù.
-        // ¿ÀºêÁ§Æ®´Â Interactonable·¹ÀÌ¾î¿¡ ÀÖ´Â ¿ÀºêÁ§Æ®·Î ÇÑÁ¤µË´Ï´Ù.
+        // í”Œë ˆì´ì–´ ì „ë°©ì— ì˜¤ë¸Œì íŠ¸ê°€ ìˆëŠ”ì§€ í™•ì¸í•˜ê¸° ìœ„í•´ í”Œë ˆì´ì–´ì˜ ìœ„ì¹˜ì—ì„œ í•˜ë‚˜ì˜ ì„ ì„ ë§Œë“­ë‹ˆë‹¤.
+        // ì˜¤ë¸Œì íŠ¸ëŠ” Interactonableë ˆì´ì–´ì— ìˆëŠ” ì˜¤ë¸Œì íŠ¸ë¡œ í•œì •ë©ë‹ˆë‹¤.
         var rayHit = Physics2D.Raycast(rigid.position, currentDirection, 0.7f, LayerMask.GetMask("Interactionable"));
 
-        // ¼±°ú Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®°¡ ÀÖÀ¸¸é ±×°ÍÀº »óÈ£ÀÛ¿ëÀÌ °¡´ÉÇÑ ¿ÀºêÁ§Æ®ÀÔ´Ï´Ù.
+        // ì„ ê³¼ ì¶©ëŒí•œ ì˜¤ë¸Œì íŠ¸ê°€ ìˆìœ¼ë©´ ê·¸ê²ƒì€ ìƒí˜¸ì‘ìš©ì´ ê°€ëŠ¥í•œ ì˜¤ë¸Œì íŠ¸ì…ë‹ˆë‹¤.
         if (rayHit.collider != null)
             interactionTarget = rayHit.collider.gameObject;
         else
