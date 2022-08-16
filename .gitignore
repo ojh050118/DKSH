@@ -76,4 +76,4 @@ crashlytics-build.properties
 .idea/
 
 # Unity projet version file
-/ProjectSettings/ProjectVersion.txt
+ProjectSettings/ProjectVersion.txt
