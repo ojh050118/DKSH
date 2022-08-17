@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-    public int questId;
-    public int questActionIndex;
+    public static int questId;
+    public static int questActionIndex;
     public GameObject[] questObject;
 
     public TextAsset QuestDataJson;
@@ -16,6 +16,7 @@ public class QuestManager : MonoBehaviour
     void Awake()
     {
         questList = parseQuestData(QuestDataJson.text);
+        if (questId == 0) questId = 10;
     }
 
     public int GetQuestTalkIndex(int id)
