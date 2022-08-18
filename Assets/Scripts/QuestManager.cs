@@ -58,21 +58,21 @@ public class QuestManager : MonoBehaviour
 
     void ControlObject()
     {
-        switch(questId)
-        {
-            case 10:
-                if (questActionIndex == 2)
-                {
-                    questObject[0].SetActive(true);
-                }
-                break;
-            case 20:
-                if (questActionIndex == 1)
-                {
-                    questObject[0].SetActive(false);
-                }
-                break;
-        }
+        //switch(questId)
+        //{
+        //    case 10:
+        //        if (questActionIndex == 2)
+        //        {
+        //            questObject[0].SetActive(true);
+        //        }
+        //        break;
+        //    case 20:
+        //        if (questActionIndex == 1)
+        //        {
+        //            questObject[0].SetActive(false);
+        //        }
+        //        break;
+        //}
     }
 
     Dictionary<int, QuestData> parseQuestData(string json)
