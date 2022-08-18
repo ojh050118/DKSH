@@ -9,8 +9,8 @@
   {
     "Id": 20,
     "quest": {
-      "questName": "퀘스트 완료",
-      "npcId": [0]
+      "questName": "매점 퀘스트",
+      "npcId": [5000, 4000]
     }
   }
 ]
