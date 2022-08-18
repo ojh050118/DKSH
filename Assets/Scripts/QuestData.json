@@ -3,14 +3,14 @@
     "Id": 10,
     "quest": {
       "questName": "퀘스트 1",
-      "npcId": [1000, 2000]
+      "npcId": [1000, 2000, 1000]
     }
   },
   {
     "Id": 20,
     "quest": {
-      "questName": "퀘스트2",
-      "npcId": [5000, 1000]
+      "questName": "매점 퀘스트",
+      "npcId": [5000, 4000]
     }
   },
   {

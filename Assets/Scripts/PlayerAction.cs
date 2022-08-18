@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAction : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class PlayerAction : MonoBehaviour
 
     public float Speed;
     public GameManager manager;
+    public GameObject talkPanel;
+    public Text talkText;
+
+
 
     Rigidbody2D rigid;
     Animator anim;
@@ -23,6 +28,12 @@ public class PlayerAction : MonoBehaviour
     {
         // 객체가 최초로 생성되면 정적 변수에 저장해 기억합니다.
         // 다시 같은 객체가 만들어 진다면 그 객체는 폐기됩니다.
+        if (currentMapName == "Main")
+        {
+            talkText.text = "학교로 가십시오.";
+            talkPanel.SetActive(true);
+        }
+
         if(instance == null)
         {
             instance = this;
@@ -33,7 +44,7 @@ public class PlayerAction : MonoBehaviour
             return;
         }
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
