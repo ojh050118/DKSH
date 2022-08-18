@@ -63,7 +63,8 @@ public class QuestManager : MonoBehaviour
       case 20:
         if (questActionIndex == 1)
         {
-          questObject[0].SetActive(false);
+          if (questObject.Length > 0)
+            questObject[0].SetActive(false);
         }
         break;
     }
