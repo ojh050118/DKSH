@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/School.unity
     guid: b53410a47ae264631bddb25ba70dc521
+  - enabled: 1
+    path: Assets/Scenes/Hall.unity
+    guid: 906de3d6e83f4474ba606ee358292052
   m_configObjects: {}
